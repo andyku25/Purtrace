@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block title %}
+My Account
+{% endblock %}
+
+{% block main%}
+
+<br>
+<br>
+<table id="prod-list">
+    <thead><h3 style="padding-left: 50px; font-family: Arial, Helvetica, sans-serif;">Ownership List</h3></thead>
+    <tr>
+        <th>Item Number</th>
+        <th>Product Image</th>
+        <th>Product Name</th>
+        <th>Purchase Price</th>
+        <th>Product Category</th>
+        <th>Other</th>
+        <th>Description</th>
+        <th>Date Purchased</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+    {% for product in products %}
+        <tr>
+            <td>{{ loop.index }}</td>
+            <td><div class="encap"><img class="img-product" alt="{{ product['prod_name'] }}" src="{{ url_for('static', filename='product_images/' + product['prod_img']) }}"></div></td>
+            <td>{{product["prod_name"]}}</td>
+            <td>{{product["pur_price"] | dollar }}</td>
+            <td>{{product["prod_cat"]}}</td>
+            <td>{{product["cat_oth"]}}</td>
+            <td>{{product["desc"]}}</td>
+            <td>{{product["add_date"]}}</td>
+            <td><a href="edit_product/{{product['id']}}" class="btn"><i class='fa fa-pencil' id='pen' aria-hidden='true'></i></a></td>
+            <td>
+                <form action="{{ url_for('delete_product', id=product.id) }}" method="post">
+                    <input type="hidden" name="_method" value="Delete">
+                    <button type="submit" class="btn btn-delete" onclick="return confirm('Are you sure you want to delete?')">
+                        <i class="fa fa-trash" aria-hidden="true"></i>
+                    </button>
+                </form>
+            </td>
+        </tr>
+    {% endfor %}
+</table>
+{% endblock %}

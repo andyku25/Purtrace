@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+{% block title %}
+Edit - {{ edit.prod_name }}
+{% endblock %}
+
+{% block main %}
+<div class="div-add">
+    <h2 style="font-family: Arial, Helvetica, sans-serif">Edit Product</h2>
+    <!-- below form must include the encoding type for images to be passed/accepted in the form -->
+    <form method="post" enctype="multipart/form-data">
+        {{ form.hidden_tag() }}
+        <div class="edit-img-container" onclick="editImg()">
+            <img id="output" src="{{ url_for('static', filename='/product_images/' + edit.prod_img) }}" class="edit-img">
+            {{ form.image(style="display: none;", id="image", accept="image/*", onchange="previewImg(this.files[0])") }}
+            <div class="edit-desc"><p>Edit</p></div>
+        </div>
+        <div class="row">
+            <div class="col-1">
+                {{ form.name.label }}
+            </div>
+            <div class="col-2">
+                {{ form.name(class_="add-fields", autocomplete="off") }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-1">
+                {{ form.price.label }}
+            </div>
+            <div class="col-2">
+                {{ form.price(class_="add-fields") }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-1">
+                {{ form.category.label }}
+            </div>
+            <div class="col-2">
+                {{ form.category(class_="add-fields", onchange="showOther(this.options[this.selectedIndex].value)")  }}
+                {% if form.category.data == 'Other' %}
+                    <div id="oth-cat" style="display: block;">{{ form.other(class_="add-fields", placeholder="Please Specify") }}</div>
+                {% else %}
+                    <div id="oth-cat" style="display: none;">{{ form.other(class_="add-fields", placeholder="Please Specify") }}</div>
+                {% endif %}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-1">
+                {{ form.description.label }}
+            </div>
+            <div class="col-2">
+                {{ form.description(class_="add-fields", rows="4", columns="41") }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-1">
+                {{ form.purchase_date.label }}
+            </div>
+            <div class="col-2">
+                {{ form.purchase_date(class_="add-fields") }}
+            </div>
+        </div>
+        <div class="row" style="float: right;">
+            <input type="submit" name="update" value="Update Product" class="btn btn-edit">
+            <input type="submit" name="cancel" value="Cancel" class="btn btn-edit">
+        </div>
+    </form>
+</div>
+<div>
+    
+</div>
+{% endblock %}

@@ -1,0 +1,466 @@
+
+/* Navbar logo and positioning */
+.logo {
+    max-width: 75px;
+    margin: 5px;
+    float: left;
+}
+
+.navbar {
+    background-color: lightgray;
+    list-style-type: none;
+    border-bottom: 1px solid rgb(122, 122, 122, 0.3);
+    display: block;
+    overflow: hidden;
+    padding: 0;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 5;
+    min-width: 591px;
+}
+
+.nav-display1 li {
+    display: block;
+    float: left;
+    font-size: larger;
+    margin-right: 1rem;
+    padding-top: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+}   
+
+li.reg {
+    display: block;
+    float: right;
+    font-size: larger;
+    margin-right: 2rem;
+    padding-top: 14px;
+}
+
+a {
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(32, 32, 32);
+}
+
+html {
+    min-height: 100%;
+    background-image: linear-gradient(rgba(226, 226, 226, 0.415), rgba(78, 78, 78, 0.741));
+}
+
+body {
+    margin: 0;
+}
+
+/* Flash message div */
+.alert {
+    text-align: justify;
+    margin: auto;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 80%;
+    border-radius: 5px;
+}
+
+.alert-success {
+    background-color: rgba(165, 223, 165, 0.76);
+    color: rgba(81, 111, 81, 0.87);
+}
+
+/* Register/login classes */
+
+.reg-form {
+    background-color: lightcyan;
+    border-radius: 15px;
+    width: 50%;
+    min-width: 385px;
+    padding: 15px;
+    margin: auto;
+    border: 1px solid rgb(122, 122, 122, 0.2);
+    box-shadow: 0px 5px 25px rgb(0, 0, 0, 0.18);
+}
+
+.log-form {
+    background-color: rgb(233, 250, 250);
+    border-radius: 15px;
+    width: 35%;
+    min-width: 385px;
+    padding: 15px;
+    margin: auto;
+    border: 1px solid rgb(122, 122, 122, 0.2);
+    box-shadow: 0px 5px 25px rgb(0, 0, 0, 0.18) ;
+}
+
+label {
+    display: inline-block;
+    padding: 12px 12px 12px 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.col-1 {
+    float: left;
+    width: 30%;
+    margin-top: 8px;
+}
+
+.col-2 {
+    float: left;
+    width: 70%;
+    margin-top: 8px
+}
+
+.txt {
+    border-radius: 5px;
+    padding: 7px;
+    width: 95%;
+    font-family: Arial, Helvetica, sans-serif;
+    border: 2px solid rgb(119, 136, 153, 0.3);
+}
+
+.btn-submit {
+    background-color: rgb(26, 138, 59);
+    color: whitesmoke;
+    border-radius: 5px;
+    margin-right: 1%;
+    float: right;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+.btn-submit:hover {
+    background-color: rgb(22, 92, 43);
+}
+
+#uname, #password {
+    border-radius: 5px;
+    padding: 7px;
+    width: 85%;
+    font-family: sans-serif;
+    border: 2px solid rgb(119, 136, 153, 0.3);
+}
+
+/* webpage content: index page  */
+.container {
+    margin: auto;
+    /* background-color: rgba(251, 255, 249, 0.85); */
+    width: 75%;
+    text-align: center;
+    padding: 3rem;
+}
+
+input[name="search"] {
+    border-radius: 15px;
+    width: 500px;
+    padding: 1rem;
+    font-size: larger;
+    border: none;
+    background: none;
+}
+
+.search-container {
+    background-color: whitesmoke;
+    border-radius: 15px;
+    width: max-content;
+    margin: auto;
+    border: 2px solid rgb(128, 156, 248);
+}
+
+.btn {
+    padding: 1rem;
+    font-size: larger;
+    cursor: pointer;
+}
+
+.btn-search {
+    border-radius: 4px 10px 10px 4px;
+    border: none;
+    background-color: rgb(128, 156, 248);
+}
+
+.btn-search:hover {
+    background-color: rgb(104, 127, 201);
+}
+
+/* results page */
+.product {
+    border: 2px solid rgba(181, 181, 181, 0.85);
+    padding: 10px;
+    max-width: 300px;
+    background-color: white;
+    width: 20%;
+    height: 400px;
+    overflow: hidden;
+    margin: 20px 40px;
+    display: inline-block;
+    position: relative;
+}
+
+.product:hover {
+    opacity: 0.80;
+}
+
+.container-img {
+    height: 200px;
+    width: 100%;
+    position: relative;
+}
+
+.result-img {
+    max-width: 100%;
+    max-height: 200px;
+    margin: auto;
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.prod-label {
+    margin: auto;
+    text-align: center;
+    padding: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: medium;
+}
+
+
+/* Add page */
+.top-container {
+    position: relative;
+}
+
+.img-container {
+    max-width: 100%;
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+}
+
+.img-content {
+    position: absolute;
+    text-align: center;
+    align-content: center;
+    left: 50%;
+    top: 45%;
+    transform: translate(-50%, -50%);
+    padding: 10px 20px;
+    font-size: 25px;
+    font-family: Helvetica, sans-serif;
+    background-color: rgba(98, 98, 98, 0.503);
+    border-radius: 4px;
+    color: snow;
+}
+
+.div-add {
+    border-radius: 5px;
+    padding: 5px;
+    text-align: left;
+    margin-left: 10%;
+    margin-right: 2%;
+    width: 25%;
+    min-width: 400px;
+    float: left;
+    
+}
+
+.btn-add {
+    border-radius: 15px;
+    border: none;
+    background-color: rgb(24, 62, 187);
+    color: whitesmoke;
+    box-shadow: 0px 5px 25px rgb(0, 0, 0, 0.18);
+    float: right;
+    margin-top: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.btn-add:hover {
+    background-color: rgb(36, 52, 157);
+}
+
+.add-fields {
+    width: 20%;
+    border-radius: 5px;
+    border: 2px solid rgb(0, 0, 0, 0.18);
+    padding: 5px;
+    min-width: 290px;
+    margin-top: 8px;
+}
+
+#oth-cat {
+    display: none;
+}
+
+.div-img-right {
+    float: right;
+    min-width: 740px;;
+    border-radius: 20px 0px 0px 20px;
+    /* background-color: rgb(167, 167, 167); */
+    height: auto;
+    padding: 40px 0px;
+}
+#side-img {
+    max-width: 700px;
+    height: auto;
+    float: right;
+    border-radius: 20px 0px 0px 20px;
+    box-shadow: 0px 5px 25px rgb(0, 0, 0, 0.3);
+}
+
+@media only screen and (max-width: 1494px) {
+    #side-img {
+        display: none;
+    }
+}
+
+/* Edit page */
+.edit-img-container {
+    /* background-color: hotpink; */
+    position: relative;
+    height: 200px;
+    max-width: 300px;
+    display: inline-block;
+}
+
+.edit-img {
+    height: 100%;
+    max-width: 300px;
+    margin: auto;
+    display: block;
+}
+
+.edit-desc p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: auto;
+    opacity: 0;
+    font-size: large;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgba(101, 100, 100, 0.503);
+    color: seashell;
+    padding: 3px;
+}
+
+.edit-img-container:hover .edit-img {
+    opacity: 0.8;
+    cursor: pointer;
+    /* background: rgba(57, 57, 57, 0.442);  */
+    /* visibility: visible; */
+}
+
+.edit-img-container:hover .edit-desc p {
+    opacity: 1;
+    cursor: pointer;
+}
+
+
+/* Dashboard profile */
+
+#prod-list {
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+}
+
+#mod {
+    cursor: pointer;
+    text-align: center;
+    padding: 1rem;
+    width: 70px;
+    float: right;
+    margin: 1rem;
+    border-radius: 10px;
+}
+
+.img-product {
+    width: 100px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.encap {
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    overflow: hidden;
+    position: relative;
+}
+
+.btn-edit {
+    border-radius: 15px;
+    border: none;
+    background-color: rgb(24, 62, 187);
+    color: whitesmoke;
+    box-shadow: 0px 5px 25px rgb(0, 0, 0, 0.18);
+    margin-top: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.btn-edit:hover {
+    background-color: rgb(36, 52, 157);
+}
+
+.btn-delete {
+    background: none;
+    border: none;
+}
+
+.edit {
+    background-color: lightblue;
+}
+
+.save {
+    background-color: lightgreen;
+}
+
+#update {
+    cursor: pointer;
+    text-align: center;
+    background-color: rgb(86, 172, 201);
+    padding: 1rem;
+    width: 70px;
+    float: right;
+    margin: 1rem;
+    border-radius: 10px;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+thead {
+    padding: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: teal;
+}
+
+th {
+    background-color: rgb(48, 177, 96);
+    color: whitesmoke;
+}
+
+th, td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+tr:nth-child(even) {
+    background-color: seashell;
+}
+
+tr:nth-child(odd) {
+    background-color: rgb(248, 248, 248);
+}

@@ -1,0 +1,68 @@
+{% extends "layout.html" %}
+{% block title %}
+Register
+{% endblock %}
+
+{% block main %}
+    <br>
+    <br>
+    <div class="reg-form">
+        <header style="text-align: center;">
+            <h1>Registration</h1>
+        </header>
+        
+        <form action="/register" method="post">
+            <div class="row">
+                <div class="col-1">
+                    <label>First Name: </label>
+                </div>
+                <div class="col-2">
+                    <input type="text" name="first_name" placeholder="First Name" autocomplete="off" class="txt">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-1">
+                    <label>Last Name: </label>
+                </div>
+                <div class="col-2">
+                    <input type="text" name="surname" placeholder="Last Name" autocomplete="off" class="txt">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-1">
+                    <label>Email: </label>
+                </div>
+                <div class="col-2">
+                    <input type="text" name="email" placeholder="Email Address" autocomplete="off" class="txt">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-1">
+                    <label>Username: </label>
+                </div>
+                <div class="col-2">
+                    <input type="text" name="username" placeholder="Username" autocomplete="off" class="txt">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-1">
+                    <label>Password: </label>
+                </div>
+                <div class="col-2">
+                    <input type="password" name="password" placeholder="Password" autocomplete="off" class="txt">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-1">
+                    <label>Password Confirmation: </label>
+                </div>
+                <div class="col-2">
+                    <input type="password" name="confirm_pass" placeholder="Confirm Password" autocomplete="off" class="txt">
+                </div>
+            </div>
+            <div class="row">
+                <input type="submit" value="Register" class="btn btn-submit">
+            </div>
+        </form>
+    </div>
+{% endblock %}

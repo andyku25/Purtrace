@@ -1,0 +1,76 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Add Product
+{% endblock %}
+
+{% block main%}
+<div class="top-container">
+    <img alt="Photo by lucas Favre on Unsplash" src="/static/layout.jpg" class="img-container">
+    <div class="img-content">Never Lose Track of Your Purchase History</div>
+</div>
+<br>
+<div class="div-add">
+    <h2 style="font-family: Arial, Helvetica, sans-serif">Add Product</h2>
+    <form action="/add" method="POST" enctype="multipart/form-data">
+        {{ form.hidden_tag() }}
+        <div class="row">
+            <div class="col-1">
+                <label>Name: </label>
+            </div>
+            <div class="col-2">
+                {{ form.name(class_='add-fields', placeholder='Product Name', autocomplete='off') }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-1">
+                <label>Purchase Price: </label>
+            </div>
+            <div class="col-2">
+                {{ form.price(class_='add-fields', placeholder='1000.00', pattern='[0-9]+\.?[0-9]{0,2}', title='Please enter a number such as 1000.00', autocomplete='off') }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-1">
+                <label>Product Category: </label>
+            </div>
+            <div class="col-2">
+                {{ form.category(class_='add-fields', onchange='showOther(this.options[this.selectedIndex].value)') }}
+                <div id="oth-cat">{{ form.other(class_='add-fields', placeholder='Please Specify', autocomplete='off') }}</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-1">
+                <label>Description (Optional): </label>
+            </div>
+            <div class="col-2">
+                {{ form.description(class_='add-fields', placeholder='Enter Description', rows='4', cols='41') }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-1">
+                <label>Date Purchased: </label>
+            </div>
+            <div class="col-2">
+                {{ form.purchase_date(class_='add-fields') }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-1">
+                <label>Image File: </label>
+            </div>
+            <div class="col-2">
+                {{ form.image(accept='image/*', style='margin-top: 8px;') }}
+            </div>
+        </div>
+        <div class="row">
+            <input type="submit" value="Add Product" class="btn btn-add">
+        </div>
+    </form>
+</div>
+<div class="div-img-right">
+    <div>
+        <img alt="Victoria" src="/static/camera.jpg" id="side-img">
+    </div>
+</div>
+{% endblock %}

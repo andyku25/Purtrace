@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Product Check
+{% endblock %}
+
+{% block main%}
+<br>
+<div class="container">
+    <div style="font-size: x-large; font-family: Arial, Helvetica, sans-serif; padding: 10px;">Product Search</div>
+    <div class="search-container">
+        <form action="{{ url_for('checker') }}" method="POST">
+            <input type="text" name="search" placeholder="TV, Computer, Espresso Machine and More..." class="searchbar" autocomplete="off">
+            <button type="submit" class="btn btn-search">
+                <i class="fa fa-search" aria-hidden="true"></i>
+            </button>
+        </form>
+    </div>
+</div>
+{% endblock %}

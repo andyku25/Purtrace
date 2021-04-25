@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% block title %}
+Results
+{% endblock %}
+
+{% block main %}
+<h2 style="text-align: center;">Search Results for: {{ search }}</h2>
+<div style="text-align: center;">
+    {% for product in products %}
+    <a href="{{ product['url'] }}" target="_blank">
+        <div class="product">
+            <div class="container-img">
+                <img src="{{ product['image'] }}" class="result-img">
+            </div>
+            <div class="prod-label">
+                <p style="font-weight: bold;">{{ product["name"] }}</p>
+                {% if product["price"] == product["salePrice"] %}
+                    <p>Regular Price: {{ product["price"] | dollar }}</p>
+                {% else %}
+                    <p>Regular Price: <del>{{ product["price"] | dollar }}</del></p>
+                    <p>On Sale for: {{ product["salePrice"] | dollar }}</p>
+                {% endif %}
+            </div>
+        </div>
+    </a>
+    {% endfor %}
+</div>
+{% endblock %}
