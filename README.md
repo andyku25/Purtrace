@@ -45,9 +45,9 @@ import secrets
 ## Demo
 
 
-> ![Search functionality](https://raw.githubusercontent.com/andyku25/Purtrace/master/search.gif)
+> ![Search functionality](https://github.com/andyku25/Purtrace/blob/master/Docs/search.gif?raw=true)
 ### Profile Ownership List example
-> ![Screenshot](https://github.com/andyku25/Purtrace/blob/master/static/ownerlist_example.jpg?raw=true)
+> ![Screenshot](https://github.com/andyku25/Purtrace/blob/master/Docs/ownerlist_example.jpg?raw=true)
 
 ## Running application.py 
 Use the virtual environment by running the terminal line below
